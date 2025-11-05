@@ -34,7 +34,7 @@ const PathContainer = styled(Card)`
 const PathTitle = styled.h3`
   font-size: ${theme.typography.fontSize.lg};
   font-weight: ${theme.typography.fontWeight.semibold};
-  color: ${theme.colors.gray[900];
+  color: \1}
   margin-bottom: ${theme.spacing.lg};
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@ const PathProgress = styled(motion.div)`
   top: 50%;
   left: 0;
   height: 4px;
-  background: ${theme.colors.success[500];
+  background: \1}
   transform: translateY(-50%);
   z-index: 2;
 `;
@@ -145,7 +145,7 @@ const NodeProgress = styled.div<{ $compact: boolean }>`
   position: absolute;
   bottom: -8px;
   right: -8px;
-  background: ${theme.colors.primary[600];
+  background: \1}
   color: white;
   border-radius: 50%;
   width: ${({ $compact }) => $compact ? '20px' : '24px'};
@@ -177,14 +177,14 @@ const NodeInfo = styled.div<{ $compact: boolean }>`
 const NodeTitle = styled.div<{ $compact: boolean }>`
   font-size: ${({ $compact }) => $compact ? theme.typography.fontSize.sm : theme.typography.fontSize.md};
   font-weight: ${theme.typography.fontWeight.semibold};
-  color: ${theme.colors.gray[900];
+  color: \1}
   margin-bottom: ${theme.spacing.xs};
   white-space: nowrap;
 `;
 
 const NodeDescription = styled.div<{ $compact: boolean }>`
   font-size: ${({ $compact }) => $compact ? theme.typography.fontSize.xs : theme.typography.fontSize.sm};
-  color: ${theme.colors.gray[600];
+  color: \1}
   max-width: 150px;
   line-height: 1.3;
 `;

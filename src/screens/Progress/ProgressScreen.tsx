@@ -102,7 +102,7 @@ const EmptyState = styled(Card)`
   background: rgba(255, 255, 255, 0.95);
   padding: ${theme.spacing.xl};
   text-align: center;
-  color: ${theme.colors.gray[600];
+  color: ${theme.colors.gray[600]};
 `;
 
 const LoadingSpinner = styled.div`
@@ -134,12 +134,12 @@ const NotificationHeader = styled.div`
 const NotificationTitle = styled.div`
   font-size: ${theme.typography.fontSize.lg};
   font-weight: ${theme.typography.fontWeight.bold};
-  color: ${theme.colors.primary[600];
+  color: ${theme.colors.primary[600]};
 `;
 
 const NotificationDescription = styled.div`
   font-size: ${theme.typography.fontSize.sm};
-  color: ${theme.colors.gray[600];
+  color: ${theme.colors.gray[600]};
 `;
 
 const CloseButton = styled.button`
@@ -147,7 +147,7 @@ const CloseButton = styled.button`
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: ${theme.colors.gray[400];
+  color: ${theme.colors.gray[400]};
   padding: ${theme.spacing.xs};
 `;
 

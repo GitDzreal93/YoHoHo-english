@@ -42,13 +42,13 @@ const StatIcon = styled.div<{ $color: string }>`
 const StatValue = styled.div`
   font-size: ${theme.typography.fontSize['2xl']};
   font-weight: ${theme.typography.fontWeight.bold};
-  color: ${theme.colors.gray[900];
+  color: \1}
   margin-bottom: ${theme.spacing.xs};
 `;
 
 const StatLabel = styled.div`
   font-size: ${theme.typography.fontSize.sm};
-  color: ${theme.colors.gray[600];
+  color: \1}
 `;
 
 const StatTrend = styled.div<{ $trend: 'up' | 'down' | 'stable' }>`
@@ -73,7 +73,7 @@ const WeeklyProgressContainer = styled(Card)`
 const ProgressTitle = styled.h3`
   font-size: ${theme.typography.fontSize.lg};
   font-weight: ${theme.typography.fontWeight.semibold};
-  color: ${theme.colors.gray[900];
+  color: \1}
   margin-bottom: ${theme.spacing.lg};
   display: flex;
   align-items: center;
@@ -163,7 +163,7 @@ const CategoryCount = styled.div`
 const ProgressBar = styled.div`
   width: 100%;
   height: 8px;
-  background: ${theme.colors.gray[200];
+  background: \1}
   border-radius: 4px;
   overflow: hidden;
 `;

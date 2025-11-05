@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { theme } from '@styles/index';
 import { Button, Card, Icon } from '@components/index';
-import { useAppStore, useTotalStars, useMasteredWordsCount, useCurrentStreak } from '@stores/index';
+import { useAppStore, useTotalStars, useMasteredWordsCount, useCurrentStreak, useProgress } from '@stores/index';
 import { useHapticFeedback } from '@hooks/index';
 
 const HomeContainer = styled.div`
@@ -274,12 +274,6 @@ const CategoryName = styled.div`
   margin-bottom: 2px;
 `;
 
-const CategoryProgress = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${theme.spacing.sm};
-`;
-
 const CategoryProgressBar = styled.div`
   flex: 1;
   height: 6px;
@@ -303,20 +297,61 @@ const CategoryProgressText = styled.div`
   text-align: right;
 `;
 
-const categories = [
-  { name: '动物', icon: '🐾', progress: 80, words: 156 },
-  { name: '颜色', icon: '🌈', progress: 60, words: 30 },
-  { name: '数字', icon: '🔢', progress: 40, words: 20 },
-  { name: '食物', icon: '🍎', progress: 45, words: 68 },
-];
+import categoriesData from '../../../data/categories.json';
 
 export const HomeScreen: React.FC = () => {
   const navigate = useNavigate();
   const { user } = useAppStore();
+  const progress = useProgress();
   const totalStars = useTotalStars();
   const masteredWords = useMasteredWordsCount();
   const currentStreak = useCurrentStreak();
   const { onButtonPress } = useHapticFeedback();
+
+  // 模拟今日统计数据，实际应用中应该从学习活动中累计
+  const todayStats = {
+    newWords: progress.masteredWords.length,
+    gamesPlayed: 0,
+    studyMinutes: Math.floor(progress.totalPlayTime / 60),
+    accuracy: 85, // 暂时固定值，应该从实际测试结果计算
+    dailyProgress: Math.min((progress.masteredWords.length / 10) * 100, 100)
+  };
+
+  // 获取分类数据并计算进度
+  const categories = categoriesData.categories.slice(0, 4).map(category => ({
+    name: category.name.zh,
+    icon: getCategoryIcon(category.id),
+    progress: 0, // 进度应该从实际的学习数据中计算
+    words: category.count
+  }));
+
+  const getCategoryIcon = (categoryId: string): string => {
+    const iconMap: Record<string, string> = {
+      animals: '🐾',
+      colors: '🌈',
+      numbers: '🔢',
+      food_and_drink: '🍎',
+      nature: '🌿',
+      clothing_and_accessories: '👕',
+      transportation: '🚗',
+      buildings_and_places: '🏢',
+      art_and_craft: '🎨',
+      music_and_instruments: '🎵',
+      sports_and_fitness: '⚽',
+      games_and_toys: '🎮',
+      fantasy_and_mythology: '🐉',
+      science_and_education: '🔬',
+      technology: '💻',
+      tools_and_equipment: '🔧',
+      household_items: '🏠',
+      office_and_school: '📚',
+      professions: '👨‍⚕️',
+      events_and_celebrations: '🎉',
+      weather_and_climate: '☀️',
+      others: '📦'
+    };
+    return iconMap[categoryId] || '📦';
+  };
 
   const handleNavigation = (path: string) => {
     onButtonPress();
@@ -364,25 +399,25 @@ export const HomeScreen: React.FC = () => {
 
             <StatsGrid>
               <TodayStat>
-                <TodayStatValue>15</TodayStatValue>
+                <TodayStatValue>{todayStats.newWords}</TodayStatValue>
                 <TodayStatLabel>新学词汇</TodayStatLabel>
               </TodayStat>
               <TodayStat>
-                <TodayStatValue>3</TodayStatValue>
+                <TodayStatValue>{todayStats.gamesPlayed}</TodayStatValue>
                 <TodayStatLabel>完成游戏</TodayStatLabel>
               </TodayStat>
               <TodayStat>
-                <TodayStatValue>25</TodayStatValue>
+                <TodayStatValue>{todayStats.studyMinutes}</TodayStatValue>
                 <TodayStatLabel>学习分钟</TodayStatLabel>
               </TodayStat>
               <TodayStat>
-                <TodayStatValue>87%</TodayStatValue>
+                <TodayStatValue>{todayStats.accuracy}%</TodayStatValue>
                 <TodayStatLabel>正确率</TodayStatLabel>
               </TodayStat>
             </StatsGrid>
 
             <ProgressBar>
-              <ProgressFill $progress={70} initial={{ width: 0 }} animate={{ width: 70 }} transition={{ delay: 0.5 }} />
+              <ProgressFill $progress={todayStats.dailyProgress} initial={{ width: 0 }} animate={{ width: todayStats.dailyProgress }} transition={{ delay: 0.5 }} />
             </ProgressBar>
 
             <Button

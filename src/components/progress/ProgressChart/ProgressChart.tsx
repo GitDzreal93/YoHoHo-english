@@ -73,7 +73,7 @@ const PercentageText = styled.div<{ $size: 'small' | 'medium' | 'large' }>`
 
 const ChartSubtitle = styled.div`
   font-size: ${theme.typography.fontSize.sm};
-  color: ${theme.colors.gray[600];
+  color: \1}
   margin-top: ${theme.spacing.sm};
 `;
 
@@ -92,12 +92,12 @@ const StatItem = styled.div`
 const StatValue = styled.div`
   font-size: ${theme.typography.fontSize.lg};
   font-weight: ${theme.typography.fontWeight.semibold};
-  color: ${theme.colors.gray[900];
+  color: \1}
 `;
 
 const StatLabel = styled.div`
   font-size: ${theme.typography.fontSize.xs};
-  color: ${theme.colors.gray[600];
+  color: \1}
   margin-top: ${theme.spacing.xs};
 `;
 

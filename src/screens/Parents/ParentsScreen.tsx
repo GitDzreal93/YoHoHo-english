@@ -54,13 +54,13 @@ const AuthIcon = styled.div`
 const AuthTitle = styled.h2`
   font-size: ${theme.typography.fontSize.xl};
   font-weight: ${theme.typography.fontWeight.bold};
-  color: ${theme.colors.gray[900];
+  color: ${theme.colors.gray[900]};
   margin-bottom: ${theme.spacing.md};
 `;
 
 const AuthDescription = styled.p`
   font-size: ${theme.typography.fontSize.md};
-  color: ${theme.colors.gray[600];
+  color: ${theme.colors.gray[600]};
   margin-bottom: ${theme.spacing.xl};
   line-height: 1.5;
 `;
@@ -75,23 +75,23 @@ const PinInput = styled.div`
 const PinDigit = styled.input`
   width: 60px;
   height: 60px;
-  border: 2px solid ${theme.colors.gray[300];
+  border: 2px solid ${theme.colors.gray[300]};
   border-radius: ${theme.borderRadius.lg};
   font-size: ${theme.typography.fontSize['2xl']};
   font-weight: ${theme.typography.fontWeight.bold};
   text-align: center;
   background: white;
-  color: ${theme.colors.gray[900];
+  color: ${theme.colors.gray[900]};
   transition: all 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color: ${theme.colors.primary[500];
+    border-color: ${theme.colors.primary[500]};
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
   }
 
   &::placeholder {
-    color: ${theme.colors.gray[400];
+    color: ${theme.colors.gray[400]};
   }
 `;
 
@@ -108,7 +108,7 @@ const AuthButton = styled(Button)`
 const HelpButton = styled(Button)`
   background: rgba(255, 255, 255, 0.9);
   color: ${theme.colors.primary[600]};
-  border: 1px solid ${theme.colors.primary[300];
+  border: 1px solid ${theme.colors.primary[300]};
 `;
 
 const DashboardContainer = styled.div`
@@ -145,13 +145,13 @@ const CardIcon = styled.div<{ $color: string }>`
 const CardTitle = styled.h3`
   font-size: ${theme.typography.fontSize.lg};
   font-weight: ${theme.typography.fontWeight.semibold};
-  color: ${theme.colors.gray[900];
+  color: \1}
   margin-bottom: ${theme.spacing.sm};
 `;
 
 const CardDescription = styled.p`
   font-size: ${theme.typography.fontSize.sm};
-  color: ${theme.colors.gray[600];
+  color: \1}
   line-height: 1.4;
   margin-bottom: ${theme.spacing.md};
 `;
@@ -161,7 +161,7 @@ const CardStats = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-top: ${theme.spacing.md};
-  border-top: 1px solid ${theme.colors.gray[200];
+  border-top: 1px solid \1}
 `;
 
 const StatItem = styled.div`
@@ -171,12 +171,12 @@ const StatItem = styled.div`
 const StatValue = styled.div`
   font-size: ${theme.typography.fontSize.lg};
   font-weight: ${theme.typography.fontWeight.bold};
-  color: ${theme.colors.primary[600];
+  color: \1}
 `;
 
 const StatLabel = styled.div`
   font-size: ${theme.typography.fontSize.xs};
-  color: ${theme.colors.gray[600];
+  color: \1}
   margin-top: ${theme.spacing.xs};
 `;
 
@@ -204,13 +204,13 @@ const WelcomeBanner = styled(Card)`
 const WelcomeTitle = styled.h2`
   font-size: ${theme.typography.fontSize.xl};
   font-weight: ${theme.typography.fontWeight.bold};
-  color: ${theme.colors.gray[900];
+  color: \1}
   margin-bottom: ${theme.spacing.sm};
 `;
 
 const WelcomeText = styled.p`
   font-size: ${theme.typography.fontSize.md};
-  color: ${theme.colors.gray[600];
+  color: \1}
   margin-bottom: ${theme.spacing.lg};
 `;
 

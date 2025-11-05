@@ -9,6 +9,7 @@ import { useAppStore, useProgress } from '@stores/index';
 import { useAudioPlayer } from '@hooks/index';
 import { useHapticFeedback } from '@hooks/index';
 import { Word, Category } from '@types/index';
+import categoriesData from '../../../data/categories.json';
 
 const FlashcardContainer = styled.div`
   min-height: 100vh;
@@ -104,38 +105,36 @@ const LoadingMessage = styled.div`
   margin-bottom: ${theme.spacing.lg};
 `;
 
-// Mock data - in real app, this would come from API or categories.json
-const mockCategories: Category[] = [
-  { id: 'animals', name: { en: 'Animals', zh: '动物' }, count: 287 },
-  { id: 'food_and_drink', name: { en: 'Food & Drink', zh: '食物饮料' }, count: 156 },
-  { id: 'colors_and_shapes', name: { en: 'Colors & Shapes', zh: '颜色形状' }, count: 50 },
-  { id: 'numbers', name: { en: 'Numbers', zh: '数字' }, count: 30 },
-];
+// 从categories.json获取分类数据
+const getCategories = (): Category[] => {
+  return categoriesData.categories.map(category => ({
+    id: category.id,
+    name: category.name,
+    count: category.images?.length || 0
+  }));
+};
 
-const mockWords: Word[] = [
-  {
-    id: '1',
-    filename: 'cat.png',
-    word: { en: 'Cat', zh: '猫' },
-    voiceFilename: { en: 'cat_en.wav', zh: 'cat_cn.wav' },
-    category: 'animals',
-  },
-  {
-    id: '2',
-    filename: 'dog.png',
-    word: { en: 'Dog', zh: '狗' },
-    voiceFilename: { en: 'dog_en.wav', zh: 'dog_cn.wav' },
-    category: 'animals',
-  },
-  {
-    id: '3',
-    filename: 'rabbit.png',
-    word: { en: 'Rabbit', zh: '兔子' },
-    voiceFilename: { en: 'rabbit_en.wav', zh: 'rabbit_cn.wav' },
-    category: 'animals',
-  },
-  // Add more mock words as needed
-];
+// 根据分类ID获取单词数据
+const getWordsByCategory = (categoryId: string): Word[] => {
+  const category = categoriesData.categories.find(cat => cat.id === categoryId);
+  if (!category || !category.images) {
+    return [];
+  }
+
+  return category.images.map((imageData, index) => ({
+    id: `${categoryId}_${index}`,
+    filename: imageData.filename || `${categoryId}_${index}.png`,
+    word: {
+      en: imageData.word?.en || 'Unknown',
+      zh: imageData.word?.cn || '未知'
+    },
+    voiceFilename: {
+      en: imageData.voice_filename?.en || `${categoryId}_${index}_en.wav`,
+      zh: imageData.voice_filename?.cn || `${categoryId}_${index}_cn.wav`
+    },
+    category: categoryId
+  }));
+};
 
 export const FlashcardScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -153,19 +152,23 @@ export const FlashcardScreen: React.FC = () => {
   const [showTranslation, setShowTranslation] = useState(false);
 
   const currentWord = words[currentIndex];
-  const progress = words.length > 0 ? ((currentIndex + 1) / words.length) * 100 : 0;
+  const progressPercentage = words.length > 0 ? ((currentIndex + 1) / words.length) * 100 : 0;
 
   // Load words for the selected category
   useEffect(() => {
     if (categoryId) {
       setIsLoading(true);
-      // Simulate API call
-      setTimeout(() => {
-        const categoryWords = mockWords.filter(word => word.category === categoryId);
+      try {
+        // 直接从categories.json加载单词数据
+        const categoryWords = getWordsByCategory(categoryId);
         setWords(categoryWords);
         setCurrentIndex(0);
         setIsLoading(false);
-      }, 500);
+      } catch (error) {
+        console.error('Failed to load category words:', error);
+        setWords([]);
+        setIsLoading(false);
+      }
     }
   }, [categoryId]);
 
