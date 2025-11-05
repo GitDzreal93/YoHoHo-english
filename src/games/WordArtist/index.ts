@@ -1,0 +1,1 @@
+export { WordArtist } from './WordArtist';

@@ -1,0 +1,1 @@
+export { MagicPuzzle } from './MagicPuzzle';
