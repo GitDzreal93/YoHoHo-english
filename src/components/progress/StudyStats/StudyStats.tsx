@@ -119,7 +119,7 @@ const DayValue = styled.div`
   left: 50%;
   transform: translateX(-50%);
   font-size: ${theme.typography.fontSize.xs};
-  color: ${theme.colors.gray[600};
+  color: ${theme.colors.gray[600]};
   font-weight: ${theme.typography.fontWeight.medium};
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -152,12 +152,12 @@ const CategoryHeader = styled.div`
 const CategoryName = styled.div`
   font-size: ${theme.typography.fontSize.sm};
   font-weight: ${theme.typography.fontWeight.medium};
-  color: ${theme.colors.gray[700};
+  color: ${theme.colors.gray[700]};
 `;
 
 const CategoryCount = styled.div`
   font-size: ${theme.typography.fontSize.sm};
-  color: ${theme.colors.gray[600};
+  color: ${theme.colors.gray[600]};
 `;
 
 const ProgressBar = styled.div`

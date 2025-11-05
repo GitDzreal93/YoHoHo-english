@@ -470,13 +470,13 @@ export const WordArtist: React.FC = () => {
           <InstructionCard>
             <Icon name="brush" size="lg" style={{ fontSize: '64px', marginBottom: theme.spacing.lg }} />
             <h2>单词画家游戏</h2>
-            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md 0 }}>
+            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md + " 0" }}>
               根据单词提示画出图案！<br />
               选择难度开始创作，<br />
               用画笔展现你的艺术天赋。
             </p>
 
-            <div style={{ margin: theme.spacing.lg 0 }}>
+            <div style={{ margin: theme.spacing.lg + ' 0' }}>
               <h4>选择难度：</h4>
               <GameControls>
                 <ControlButton
@@ -661,7 +661,7 @@ export const WordArtist: React.FC = () => {
         >
           <ResultTitle>创作完成！</ResultTitle>
 
-          <div style={{ fontSize: '48px', margin: theme.spacing.md 0 }}>
+          <div style={{ fontSize: '48px', margin: theme.spacing.md + " 0" }}>
             {rating}
           </div>
 

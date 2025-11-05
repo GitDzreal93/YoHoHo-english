@@ -442,7 +442,7 @@ export const MemoryFlip: React.FC = () => {
           <InstructionCard>
             <Icon name="memory" size="lg" style={{ fontSize: '64px', marginBottom: theme.spacing.lg }} />
             <h2>记忆翻牌游戏</h2>
-            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md 0 }}>
+            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md + " 0" }}>
               翻开卡片找到配对！<br />
               记住卡片位置，找到相同的图案<br />
               考验你的记忆力和专注力。
@@ -561,7 +561,7 @@ export const MemoryFlip: React.FC = () => {
           <GameControls>
             <ControlButton
               onClick={handleGameEnd}
-              icon={<Icon name="stop" }}
+              icon={<Icon name="stop" />}
             >
               结束游戏
             </ControlButton>
@@ -591,7 +591,7 @@ export const MemoryFlip: React.FC = () => {
         >
           <ResultTitle>游戏完成！</ResultTitle>
 
-          <div style={{ fontSize: '48px', margin: theme.spacing.md 0 }}>
+          <div style={{ fontSize: '48px', margin: theme.spacing.md + " 0" }}>
             {rating}
           </div>
 

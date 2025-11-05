@@ -328,7 +328,7 @@ export const MagicPuzzle: React.FC = () => {
           <InstructionCard>
             <Icon name="puzzle" size="lg" style={{ fontSize: '64px', marginBottom: theme.spacing.lg }} />
             <h2>魔法拼图游戏</h2>
-            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md 0 }}>
+            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md + ' 0' }}>
               根据提示找到正确的拼图块！<br />
               点击包含正确图片的拼图块<br />
               来完成魔法拼图挑战。
@@ -377,7 +377,7 @@ export const MagicPuzzle: React.FC = () => {
         <GameContent>
           <InstructionCard>
             <h3>找到正确的拼图块</h3>
-            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md 0 }}>
+            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md + ' 0' }}>
               找到 "{currentWord.word.zh}" ({currentWord.word.en}) 对应的拼图块
             </p>
             <ControlButton
@@ -464,7 +464,7 @@ export const MagicPuzzle: React.FC = () => {
         >
           <ResultTitle>拼图完成！</ResultTitle>
 
-          <div style={{ fontSize: '48px', margin: theme.spacing.md 0 }}>
+          <div style={{ fontSize: '48px', margin: theme.spacing.md + ' 0' }}>
             {rating}
           </div>
 

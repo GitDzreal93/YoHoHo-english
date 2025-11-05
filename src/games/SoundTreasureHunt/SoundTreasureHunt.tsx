@@ -347,7 +347,7 @@ export const SoundTreasureHunt: React.FC = () => {
           <InstructionCard>
             <Icon name="music" size="lg" style={{ fontSize: '64px', marginBottom: theme.spacing.lg }} />
             <h2>声音寻宝游戏</h2>
-            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md 0 }}>
+            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md + " 0" }}>
               听声音，找宝藏！<br />
               点击播放按钮听单词发音，<br />
               然后找到对应的图片宝箱。
@@ -394,7 +394,7 @@ export const SoundTreasureHunt: React.FC = () => {
         <GameContent>
           <InstructionCard>
             <h3>听声音找宝藏</h3>
-            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md 0 }}>
+            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md + " 0" }}>
               找到 "{currentWord.word.zh}" ({currentWord.word.en}) 对应的宝箱
             </p>
             <ControlButton
@@ -470,7 +470,7 @@ export const SoundTreasureHunt: React.FC = () => {
         >
           <ResultTitle>游戏结束！</ResultTitle>
 
-          <div style={{ fontSize: '48px', margin: theme.spacing.md 0 }}>
+          <div style={{ fontSize: '48px', margin: theme.spacing.md + " 0" }}>
             {rating}
           </div>
 

@@ -418,7 +418,7 @@ export const RainbowBubbles: React.FC = () => {
           <InstructionCard>
             <Icon name="bubble" size="lg" style={{ fontSize: '64px', marginBottom: theme.spacing.lg }} />
             <h2>彩虹泡泡游戏</h2>
-            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md 0 }}>
+            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md + " 0" }}>
               点击目标单词对应的泡泡！<br />
               看准目标，快速点击正确的泡泡<br />
               连续正确可以获得连击加分！
@@ -553,7 +553,7 @@ export const RainbowBubbles: React.FC = () => {
         >
           <ResultTitle>泡泡大战结束！</ResultTitle>
 
-          <div style={{ fontSize: '48px', margin: theme.spacing.md 0 }}>
+          <div style={{ fontSize: '48px', margin: theme.spacing.md + " 0" }}>
             {rating}
           </div>
 

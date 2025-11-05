@@ -428,7 +428,7 @@ export const AnimalMusicBox: React.FC = () => {
           <InstructionCard>
             <Icon name="music" size="lg" style={{ fontSize: '64px', marginBottom: theme.spacing.lg }} />
             <h2>动物音乐盒</h2>
-            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md 0 }}>
+            <p style={{ color: theme.colors.gray[600], margin: theme.spacing.md + " 0" }}>
               学习动物的英文名称和叫声！<br />
               选择学习模式认识动物，<br />
               或挑战测试模式看看你的掌握程度。
@@ -585,7 +585,7 @@ export const AnimalMusicBox: React.FC = () => {
               第 {totalQuestions} 题：这是哪种动物的叫声？
             </QuizQuestion>
 
-            <div style={{ fontSize: '48px', margin: theme.spacing.md 0 }}>
+            <div style={{ fontSize: '48px', margin: theme.spacing.md + " 0" }}>
               {quizAnimal.emoji}
             </div>
 
@@ -640,7 +640,7 @@ export const AnimalMusicBox: React.FC = () => {
         >
           <ResultTitle>测试完成！</ResultTitle>
 
-          <div style={{ fontSize: '48px', margin: theme.spacing.md 0 }}>
+          <div style={{ fontSize: '48px', margin: theme.spacing.md + " 0" }}>
             {rating}
           </div>
 

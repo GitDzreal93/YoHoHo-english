@@ -56,7 +56,7 @@ const PathLine = styled.div`
   left: 0;
   right: 0;
   height: 4px;
-  background: ${theme.colors.gray[300};
+  background: ${theme.colors.gray[300]};
   transform: translateY(-50%);
   z-index: 1;
 `;

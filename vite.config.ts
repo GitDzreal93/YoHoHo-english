@@ -16,6 +16,7 @@ export default defineConfig({
       '@styles': resolve(__dirname, 'src/styles'),
       '@types': resolve(__dirname, 'src/types'),
       '@data': resolve(__dirname, 'data'),
+      '@games': resolve(__dirname, 'src/games'),
     },
   },
   build: {
